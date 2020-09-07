@@ -41,7 +41,7 @@
     <div class="eo4geologo" style="width: 11%;height : 11%"></div>
 
     <div class="partnerlogo" style="width: 15%;height : 11%"></div>
-    <div class="presentation_title" style=" text-align: center ">What is Copernicus?</div>
+    <div class="presentation_title" style=" text-align: center ">Terrascope Application Example</div>
     <!--The title of the presentation appears on each slide-->
 
 
@@ -77,10 +77,10 @@
         </section>
         <section>
             <h2>Virtual Environments</h2>
-            <p>Terrascope provides two virtual environments with necessary tools and data so that you can start
+            <p class="fragment">Terrascope provides two virtual environments with necessary tools and data so that you can start
                 coding immediately.</p>
             <ul>
-                <li>
+                <li class="fragment">
                     <em>Virtual Machines</em> - With a user Virtual Machine (VM), a developer or a scientist can use a
                     Virtual Research Environment,
                     with access to the available data archives, as well as a powerful tool set and libraries for further
@@ -88,7 +88,7 @@
                     and analysis (using e.g. the SNAP toolbox, GRASS GIS, and QGIS) or to develop-debug-test
                     applications (in e.g. R, Python or Java).
                 </li>
-                <li>
+                <li class="fragment">
                     <em>Notebooks</em> - A Notebook is a web application that allows you to create and share scripts
                     that contain live code, equations,
                     visualizations, and narrative supporting text. It is basically a script broken down into several
@@ -99,7 +99,7 @@
                     faster understanding of your algorithm by other users.
                 </li>
             </ul>
-            <p>In this training, we will focus on the Notebooks.</p>
+            <p  class="fragment">In this training, we will focus on the Notebooks.</p>
         </section>
         <section>
             <h2>Accessing Terrascope Notebooks</h2>
@@ -141,11 +141,11 @@
             <section>
                 <h2>Interactive Exercise on Phenology Use Case </h2>
                 <h3>Introduction</h3>
-                <p>
+                <p class="fragment">
                     Phenology is an important supporting parameter of vegetation that can be derived from remote sensing
                     data. It allows for instance to evaluate crop conditions in agriculture, or vegetation/crop type
-                    mapping and is an indicator for climate change. In this case, phenology is defined by:
-                    <br><br>
+                    mapping and is an indicator for climate change. In this case, phenology is defined by:</p>
+                 <p  class="fragment">
                     Start of season, a date and the corresponding value of the biophysical indicator
                     End of season, a date and the corresponding value of the biophysical indicator
                     Deriving phenology accurately, requires a sufficiently dense vegetation index time series for a
@@ -154,8 +154,8 @@
                     accuracy is also an important requirement. Today, no single sensor can really satisfy all these
                     requirements, limiting the accuracy of the predicted phenology parameters. In this use case, we will
                     use openEO's capability to easily merge multiple datasets with different resolutions. Concretely we
-                    will use:
-                    <br><br>
+                will use:</p>
+                    <p  class="fragment">
                     ProbaV 10-daily composites: low spatial resolution (300m), but high temporal resolution
                     Sentinel-2: high spatial resolution (10m), low temporal resolution
                     Sentinel-1 Gamma0: high spatial \& temporal resolution, but no direct link to phenological
@@ -199,7 +199,6 @@
 
     </div>
 
-
     <script src="internal_restricted/v1.0/js/reveal.js"></script>
 
     <script>
@@ -222,12 +221,6 @@
 			});
 
 
-
-
-
-
-
-
     </script>
 
     <!-- rauslöschen?? -->
@@ -239,12 +232,6 @@
 				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
 			]
 			});
-
-
-
-
-
-
 
     </script>
 
