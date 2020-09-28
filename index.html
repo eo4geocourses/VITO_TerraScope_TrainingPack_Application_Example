@@ -9,32 +9,32 @@
 
 
 <!doctype html>
-<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en">
 
 <head>
     <meta charset="utf-8">
-		<title>Terrascope Application Development</title>
-		<span property="dc:title">Terrascope Application Development</span>
-		<span property="dc:creator">VITO - Vlaamse Instelling voor Technologisch Onderzoek</span>
-		<span property="dc:subject">Developing Applications usign Terrascope Platform and Tools</span>
-		<span property="dc:abstract">This slide set provides overview of how researchers or students could utilize Terrascope Jupyter notebooks and API such as openEO to develop remote sensing algorithms and applications</span>
-		<span property="dc:tableOfContents"> </span>
-		<span property="dc:desription"> </span>
-		<span property="dc:contributor">Jeroen Dries, Tamas Banyai, Hande Erdem</span>
-		<span property="dc:created">2020-08-31</span>
-		<span property="dc:type">InteractiveResource</span>
-		<span property="dc:format">html</span>
-		<span property="dc:language">EN</span>
-		<span property="dc:SizeOrDuration">45min</span>
-		<span property="dc:audience">students</span>
-		<span property="dc:educationLevel">EQF 6</span>
-		<span property="dc:source"></span>
-		<span property="dc:rightsHolder"></span>
-		<span property="dc:license">CC BY-SA 4.0</span>
-		
-		<meta property="dc:relation" content="eo4geo:TA7-5-1" />
-		<meta property="dc:relation" content="eo4geo:TA7-5-2" />
-		<meta property="dc:relation" content="eo4geo:GS3" />
+    <title>Terrascope Application Development</title>
+    <span property="dc:title">Terrascope Application Development</span>
+    <span property="dc:creator">VITO - Vlaamse Instelling voor Technologisch Onderzoek</span>
+    <span property="dc:subject">Developing Applications usign Terrascope Platform and Tools</span>
+    <span property="dc:abstract">This slide set provides overview of how researchers or students could utilize Terrascope Jupyter notebooks and API such as openEO to develop remote sensing algorithms and applications</span>
+    <span property="dc:tableOfContents"> </span>
+    <span property="dc:desription"> </span>
+    <span property="dc:contributor">Jeroen Dries, Tamas Banyai, Hande Erdem</span>
+    <span property="dc:created">2020-08-31</span>
+    <span property="dc:type">InteractiveResource</span>
+    <span property="dc:format">html</span>
+    <span property="dc:language">EN</span>
+    <span property="dc:SizeOrDuration">45min</span>
+    <span property="dc:audience">students</span>
+    <span property="dc:educationLevel">EQF 4</span>
+    <span property="dc:source"></span>
+    <span property="dc:rightsHolder"></span>
+    <span property="dc:license">CC BY-SA 4.0</span>
+
+    <meta property="dc:relation" content="eo4geo:IP5-1"/>
+    <meta property="dc:relation" content="eo4geo:IP3-11"/>
+    <meta property="dc:relation" content="eo4geo:IP3-1"/>
     <link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
     <!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
     <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
@@ -78,14 +78,14 @@
             dc:format "html";
             dc:language "EN";
             dc:SizeOrDuration "45min"
-            dc:audience "students";
-            dc:educationLevel "EQF 6";
+            dc:audience "students, researchers";
+            dc:educationLevel "EQF 5";
             dc:source "";
             dc:rightsHolder "VITO";
             dc:license "CC BY-SA 4.0";
-            dc:relation eo4geo:TA7-5-1;
-            dc:relation eo4geo:TA7-5-2;
-            dc:relation eo4geo:GS3 .
+            dc:relation eo4geo:IP5-1;
+            dc:relation eo4geo:IP3-11;
+            dc:relation eo4geo:IP3-1 .
                         -->
 
 
@@ -119,10 +119,12 @@
                 <h2>Jupyter Notebooks</h2>
                 <p class="fragment">
                     A Notebook is a web application that allows you to create and share scripts
-                    that contain live code, equations, visualizations, and narrative supporting text. It is basically a script broken down into several
+                    that contain live code, equations, visualizations, and narrative supporting text. It is basically a
+                    script broken down into several
                     major blocks (cells) that can be executed sequentially. Together with the supporting text cells, the
                     script should be rather easy to comprehend.
-                    </p><p  class="fragment">The Terrascope Notebooks are based on the Open Source
+                </p>
+                <p class="fragment">The Terrascope Notebooks are based on the Open Source
                     Jupyter notebooks application and tailored to the needs of remote sensing users.
                     Each notebook has direct access to the Terrascope datasets. A notebook facilitates a better and
                     faster understanding of your algorithm by other users.
@@ -133,7 +135,8 @@
         </section>
         <section>
             <h2>Accessing Terrascope Notebooks</h2>
-            In order to access the Terrascope Notebooks, go to <a href="https://notebooks.terrascope.be/">https://notebooks.terrascope.be/</a> address.<br>
+            In order to access the Terrascope Notebooks, go to <a href="https://notebooks.terrascope.be/">https://notebooks.terrascope.be/</a>
+            address.<br>
             You can login if you have an existing account or register if you're a new user.
             <img src="resources/terrascope/nb_login1.jpg" height="60%" width="60%">
         </section>
@@ -146,48 +149,63 @@
         <section id="warmup">
             <section>
                 <h2>Warm Up</h2>
-                <p  class="fragment">Let's start with a warm up exercise first and do a step-by-step simple band calculation on Sentinel-2 imagery using openEO API. </p>
-                <p  class="fragment">openEO ........................ </p>
+                <p class="fragment">Let's start with a warm up exercise first and do a step-by-step simple band
+                    calculation on Sentinel-2 imagery using openEO API. </p>
+                <p class="fragment">We'll use OpenEO because it reduces the complexity of handling large amounts and
+                    variety of EO data by implementing a standard, with a focus on large scale processing and time
+                    series analysis. You can find more information at <a href="https://openeo.org/">openeo.org</a></p>
             </section>
             <section>
                 <h2>Warm Up</h2>
-                <p class="fragment"> As a first step, go to your Terrascope Notebook homepage and select "python36" notebook  to create a new notebook.</p>
+                <p class="fragment"> As a first step, go to your Terrascope Notebook homepage and select "python36"
+                    notebook to create a new notebook.</p>
                 <img src="resources/terrascope/nbe1.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">As we are going to use openEO, you must start by importing the necessary library. Click on the "+" icon to add a new cell. It will be added automatically as a "Code" cell.</p>
+                <p class="fragment">As we are going to use openEO, you must start by importing the necessary library.
+                    Click on the "+" icon to add a new cell. It will be added automatically as a "Code" cell.</p>
                 <p class="fragment" style="font-family: monospace">import openeo</p>
                 <img src="resources/terrascope/nbe2.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">You can also add "Text" cells. These are useful for adding information but won't be executed by the kernel.</p>
+                <p class="fragment">You can also add "Text" cells. These are useful for adding information but won't be
+                    executed by the kernel.</p>
                 <img src="resources/terrascope/nbe3.jpg" class="fragment">
             </section>
             <section>
-                 <p class="fragment">In the next step, we are going to create a new session by connecting to the openEO backend:</p>
-                <p class="fragment" style="font-family: monospace">session = openeo.connect("https://openeo.vito.be/openeo/1.0.0")</p>
+                <p class="fragment">In the next step, we are going to create a new session by connecting to the openEO
+                    backend:</p>
+                <p class="fragment" style="font-family: monospace">session =
+                    openeo.connect("https://openeo.vito.be/openeo/1.0.0")</p>
                 <img src="resources/terrascope/nbe4.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">Now that we have the session, we can ask openEO to return us a datacube of Sentinel-2 images for 6 May 2018.</p>
-                <p class="fragment" style="font-family: monospace">sentinel2_data_cube = session.imagecollection("TERRASCOPE_S2_TOC_V2", temporal_extent=["2018-05-06","2018-05-06"], bands=["TOC-B02_10M","TOC-B04_10M","TOC-B08_10M"])</p>
+                <p class="fragment">Now that we have the session, we can ask openEO to return us a datacube of
+                    Sentinel-2 images for 6 May 2018.</p>
+                <p class="fragment" style="font-family: monospace">sentinel2_data_cube =
+                    session.imagecollection("TERRASCOPE_S2_TOC_V2", temporal_extent=["2018-05-06","2018-05-06"],
+                    bands=["TOC-B02_10M","TOC-B04_10M","TOC-B08_10M"])</p>
                 <img src="resources/terrascope/nbe5.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">It is recommended to run the cells as you're adding them to make sure that there are no errors. You can do so by clicking on the "⏵" icon.</p>
+                <p class="fragment">It is recommended to run the cells as you're adding them to make sure that there are
+                    no errors. You can do so by clicking on the "⏵" icon.</p>
                 <img src="resources/terrascope/nbe6.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">We can slice the datacube further by limiting it to a boundry box as shown below:</p>
-                <p class="fragment" style="font-family: monospace">sentinel2_data_cube = sentinel2_data_cube.filter_bbox(west=5.15183687210083,east=5.153381824493408,south=51.18192559252128,north=51.18469636040683,crs="EPSG:4326")</p>
+                <p class="fragment">We can slice the datacube further by limiting it to a boundry box as shown
+                    below:</p>
+                <p class="fragment" style="font-family: monospace">sentinel2_data_cube =
+                    sentinel2_data_cube.filter_bbox(west=5.15183687210083,east=5.153381824493408,south=51.18192559252128,north=51.18469636040683,crs="EPSG:4326")</p>
                 <img src="resources/terrascope/nbe7.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">You can extract the bands by calling "band" operation ont he openEO datacube on which you can do arithmetic operations. </p>
+                <p class="fragment">You can extract the bands by calling "band" operation ont he openEO datacube on
+                    which you can do arithmetic operations. </p>
                 <p class="fragment" style="font-family: monospace">B02 = sentinel2_data_cube.band('TOC-B02_10M')<br>
                     B04 = sentinel2_data_cube.band('TOC-B04_10M')<br>
                     B08 = sentinel2_data_cube.band('TOC-B08_10M')<br>
-<br>
+                    <br>
                     evi_cube = (2.5 * (B08 - B04)) / ((B08 + 6.0 * B04 - 7.5 * B02) + 1.0)</p>
                 <img src="resources/terrascope/nbe8.jpg" class="fragment">
             </section>
@@ -239,7 +257,7 @@
                 <h2>Interactive Exercise on Phenology Use Case </h2>
                 <h3>Introduction</h3>
                 <p>
-                <p class="fragment">
+                <p>
                     This study will demonstrate the multi sensor data fusion approach by merging three datasets into a
                     single dense vegetation index time series. This is provided as input to a phenology algorithm, which
                     was
@@ -279,7 +297,7 @@
                         account</a></li>
                     <li>Navigate to <em>notebook-samples/openEo/ folder and open data_fusion.ipynb file</em></li>
                     <li>Study and execute the following exercise step by step</li>
-                    <li>Fill in your Terrascope username and password in cell #4</li>
+                    <li>Do not forget to fill in your Terrascope username and password in cell #4 of the notebook</li>
                 </ol>
             </section>
             <section
@@ -315,6 +333,7 @@
 
 
 
+
     </script>
 
     <!-- rauslöschen?? -->
@@ -326,6 +345,7 @@
 				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
 			]
 			});
+
 
 
     </script>
