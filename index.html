@@ -95,15 +95,17 @@
                 <h2>Virtual Machines</h2>
 
                 <p class="fragment">
-                   Allows developers or scientists to  </p>
+                    Allows developers or scientists to </p>
                 <ul class="fragment">
-                <li>access to the available data archives</li>
-                <li>use powerful tool set and libraries for further
-                    data exploration
-                    and analysis (using e.g. the SNAP toolbox, GRASS GIS, and QGIS)</li>
-                <li>develop-debug-test
-                    applications (in e.g. R, Python or Java)</li>
-            </ul>
+                    <li>access to the available data archives</li>
+                    <li>use powerful tool set and libraries for further
+                        data exploration
+                        and analysis (using e.g. the SNAP toolbox, GRASS GIS, and QGIS)
+                    </li>
+                    <li>develop-debug-test
+                        applications (in e.g. R, Python or Java)
+                    </li>
+                </ul>
 
 
                 <img src="resources/terrascope/vm.jpg" class="fragment">
@@ -156,9 +158,12 @@
                 <img src="resources/terrascope/nbe1.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">As we are going to use the python client API for openEO, you must start by importing the necessary library.
+                <p class="fragment">As we are going to use the python client API for openEO, you must start by importing
+                    the necessary library.
                     Click on the "+" icon to add a new cell. It will be added automatically as a "Code" cell.</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">import openeo</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    import openeo</p>
                 <img src="resources/terrascope/nbe2.jpg" class="fragment">
             </section>
             <section>
@@ -169,14 +174,18 @@
             <section>
                 <p class="fragment">In the next step, we are going to create a new session by connecting to the openEO
                     backend:</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">session =
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    session =
                     openeo.connect("https://openeo.vito.be/openeo/1.0.0")</p>
                 <img src="resources/terrascope/nbe4.jpg" class="fragment">
             </section>
             <section>
                 <p class="fragment">Now that we have the session, we can ask openEO to return us a raster data cube of
                     Sentinel-2 images for 6 May 2018.</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">sentinel2_data_cube =
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    sentinel2_data_cube =
                     session.imagecollection("TERRASCOPE_S2_TOC_V2", temporal_extent=["2018-05-06","2018-05-06"],
                     bands=["TOC-B02_10M","TOC-B04_10M","TOC-B08_10M"])</p>
                 <img src="resources/terrascope/nbe5.jpg" class="fragment">
@@ -189,14 +198,20 @@
             <section>
                 <p class="fragment">We can slice the data cube further by limiting it to a boundry box as shown
                     below:</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">sentinel2_data_cube =
-                    sentinel2_data_cube.filter_bbox(west=5.15183687210083,east=5.153381824493408,<br>south=51.18192559252128,north=51.18469636040683,crs="EPSG:4326")</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    sentinel2_data_cube =
+                    sentinel2_data_cube.filter_bbox(west=5.15183687210083,east=5.153381824493408,<br>south=51.18192559252128,north=51.18469636040683,crs="EPSG:4326")
+                </p>
                 <img src="resources/terrascope/nbe7.jpg" class="fragment">
             </section>
             <section>
                 <p class="fragment">You can extract the bands by calling "band" operation on the openEO data cube on
-                    which you can do arithmetic operations. Below, we are calculating the enhanced vegetation index: </p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">B02 = sentinel2_data_cube.band('TOC-B02_10M')<br>
+                    which you can do arithmetic operations. Below, we are calculating the enhanced vegetation
+                    index: </p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    B02 = sentinel2_data_cube.band('TOC-B02_10M')<br>
                     B04 = sentinel2_data_cube.band('TOC-B04_10M')<br>
                     B08 = sentinel2_data_cube.band('TOC-B08_10M')<br>
                     <br>
@@ -204,13 +219,21 @@
                 <img src="resources/terrascope/nbe8.jpg" class="fragment">
             </section>
             <section>
-                <p class="fragment">The result can be downloaded as follows:</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">evi_cube.download("out.geotiff",format="GeoTIFF")</p>
+                <p class="fragment">The result can be downloaded after authenticating:</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    openeo_user= 'eo4geo'<br>
+                    openeo_pass= 'eo4geo123'<br>
+                    session.authenticate_basic(openeo_user, openeo_pass)<br>
+                    <br>
+                    evi_cube.download("out.geotiff",format="GTiff")</p>
                 <img src="resources/terrascope/nbe9.jpg" class="fragment">
             </section>
             <section>
                 <p class="fragment">You can visualize the output by using rasterio and matplotlib libraries:</p>
-                <p class="fragment" style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">import rasterio<br>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    import rasterio<br>
                     from matplotlib import pyplot as plt<br>
 
                     with rasterio.open('out.geotiff', 'r') as ds:<br>
@@ -308,7 +331,7 @@
                         account</a></li>
                     <li>Navigate to <em>notebook-samples/openEo/ folder and open data_fusion.ipynb file</em></li>
                     <li>Study and execute the following exercise step by step</li>
-                    <li>Do not forget to fill in your Terrascope username and password in cell #4 of the notebook</li>
+                    <li>Do not forget to enter the credentials (eo4geo/eo4geo123) in cell #4 of the notebook</li>
                 </ol>
             </section>
             <section
@@ -345,6 +368,7 @@
 
 
 
+
     </script>
 
     <!-- rauslöschen?? -->
@@ -356,6 +380,7 @@
 				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
 			]
 			});
+
 
 
 
