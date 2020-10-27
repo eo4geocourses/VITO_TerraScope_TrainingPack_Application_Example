@@ -15,6 +15,6 @@ This slide set provides an overview of how researchers or students could utilize
 ### Learning Outcomes:
 * Understand Terrascope development environments including Jupyter notebooks
 * Develop a simple application, step-by-step, using Terrascope and OpenEO API
-* Study Phenology Use Case implementation as an advanced exercise
+* Analyse Phenology Use Case implementation as an advanced exercise
 
 _All rights belong to VITO - Vlaamse Instelling voor Technologisch Onderzoek._
